@@ -6,7 +6,7 @@ const services = [
     icon: Zap,
     tier: "Starter",
     title: "Zapier Automation",
-    price: "$150",
+    price: "$250",
     unit: "per project",
     description:
       "Multi-step Zapier workflows that connect your apps, eliminate manual work, and run 24/7 without you.",

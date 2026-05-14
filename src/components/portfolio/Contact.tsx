@@ -44,13 +44,8 @@ export function Contact() {
   };
 
   const contacts = [
-    { icon: CalendarDays, label: "Discovery call", value: "Book on Calendly", href: CALENDLY_LINK },
     { icon: Mail,         label: "Email",         value: "ajjosol18@gmail.com",                     href: "mailto:ajjosol18@gmail.com" },
     { icon: Phone,        label: "Phone",         value: "0993 878 9620",                           href: "tel:09938789620" },
-    { icon: MapPin,       label: "Location",      value: "Tultugan, Calape, Bohol",                 href: "#" },
-    { icon: ExternalLink, label: "LinkedIn",     value: "linkedin.com/in/aj-josol",                href: "https://www.linkedin.com/in/aj-josol-93836a36a/" },
-    { icon: Globe,        label: "OnlineJobs.ph", value: "View my VA profile",                      href: "https://v2.onlinejobs.ph/jobseekers/info/4245030" },
-    { icon: Code2,        label: "GitHub",        value: "@whoiszen",                               href: "https://github.com/whoiszen" },
   ];
 
   return (

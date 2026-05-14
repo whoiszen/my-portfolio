@@ -414,6 +414,35 @@ const PROJECTS: Project[] = [
 const FILTERS = ["All", "Automation", "Web Development"] as const;
 type Filter = (typeof FILTERS)[number];
 
+function ProjectImageSlideshow({ images }: { images: string[] }) {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  useEffect(() => {
+    if (images.length <= 1) return;
+
+    const interval = setInterval(() => {
+      setCurrentIndex((prev) => (prev + 1) % images.length);
+    }, 3000); // Change image every 3 seconds
+
+    return () => clearInterval(interval);
+  }, [images.length]);
+
+  return (
+    <div className="relative h-full w-full">
+      {images.map((image, index) => (
+        <img
+          key={image}
+          src={image}
+          alt=""
+          className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-1000 ${
+            index === currentIndex ? "opacity-100" : "opacity-0"
+          }`}
+        />
+      ))}
+    </div>
+  );
+}
+
 export function Projects() {
   const [filter,  setFilter]  = useState<Filter>("All");
   const [openIdx, setOpenIdx] = useState<number | null>(null);
@@ -508,11 +537,7 @@ export function Projects() {
                 >
                   {/* Project Image */}
                   <div className="aspect-video w-full overflow-hidden rounded-lg">
-                    <img
-                      src={Array.isArray(p.image) ? p.image[0] : p.image}
-                      alt={p.title}
-                      className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
-                    />
+                    <ProjectImageSlideshow images={Array.isArray(p.image) ? p.image : [p.image]} />
                   </div>
 
                   <div className="mt-4 inline-flex rounded-full border px-3 py-1 text-[11px] uppercase tracking-[0.15em]" style={{ borderColor: "oklch(1 0 0 / 0.12)", color: "var(--gold)" }}>
@@ -590,7 +615,7 @@ function ProjectModal({
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      className="fixed inset-0 z-[100] flex items-start justify-center overflow-y-auto p-4 sm:p-8"
+      className="fixed inset-0 z-100 flex items-start justify-center overflow-y-auto p-4 sm:p-8"
       style={{ background: "oklch(0.08 0.01 265 / 0.85)", backdropFilter: "blur(8px)" }}
       onClick={onClose}
     >
@@ -674,7 +699,7 @@ function ProjectModal({
             {project.steps.map((s, i) => (
               <li key={i} className="flex gap-3 text-sm">
                 <span
-                  className="grid h-6 w-6 flex-shrink-0 place-items-center rounded-full text-[11px] font-bold"
+                  className="grid h-6 w-6 shrink-0 place-items-center rounded-full text-[11px] font-bold"
                   style={{
                     background: "var(--gradient-primary)",
                     color: "oklch(0.10 0.01 265)",

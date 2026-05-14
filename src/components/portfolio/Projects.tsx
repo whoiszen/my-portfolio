@@ -200,7 +200,7 @@ const PROJECTS: Project[] = [
   },
   {
     id: "wd1",
-    image: ["/webdev/focus-flow/landing-hero.png", "/webdev/focus-flow/focus-timer.png", "/webdev/focus-flow/task-board.png", "/webdev/focus-flow/stats-dashboard.png"],
+    image: ["/webdev/focus-flow/landing-hero.png", "/webdev/focus-flow/rest-zone.png", "/webdev/focus-flow/focus-timer.png", "/webdev/focus-flow/task-board.png", "/webdev/focus-flow/stats-dashboard.png"],
     category: "webdev",
     title: "FocusFlow - Productivity Tracker",
     description:
@@ -229,7 +229,7 @@ const PROJECTS: Project[] = [
   },
   {
     id: "wd2",
-    image: ["/webdev/learnhub/01-home.png", "/webdev/learnhub/04-student-dashboard.png", "/webdev/learnhub/10-admin-dashboard.png", "/webdev/learnhub/13-admin-courses.png"],
+    image: ["/webdev/learnhub/01-home.png", "/webdev/learnhub/02-login.png", "/webdev/learnhub/03-register.png", "/webdev/learnhub/04-student-dashboard.png", "/webdev/learnhub/10-admin-dashboard.png", "/webdev/learnhub/05-student-courses.png", "/webdev/learnhub/13-admin-courses.png"],
     category: "webdev",
     title: "LearnHub - IT Learning Platform",
     description:
@@ -622,26 +622,26 @@ function ProjectModal({
         </button>
 
         {/* Project Images */}
-        <div className="mb-6 relative">
+        <div className="mb-6 relative aspect-video overflow-hidden rounded-3xl">
           <img
             src={currentImage}
             alt={`${project.title} screenshot ${slide + 1}`}
-            className="w-full rounded-3xl border object-cover"
-            style={{ borderColor: "oklch(1 0 0 / 0.08)", minHeight: 220 }}
+            className="h-full w-full border object-cover"
+            style={{ borderColor: "oklch(1 0 0 / 0.08)" }}
           />
 
           {images.length > 1 && (
             <>
               <button
                 onClick={prevSlide}
-                className="absolute left-4 top-1/2 -translate-y-1/2 rounded-full bg-white/10 p-2 text-white backdrop-blur transition-colors hover:bg-white/20"
+                className="absolute left-4 top-1/2 -translate-y-1/2 rounded-full bg-white/10 p-2 text-white backdrop-blur transition-all hover:bg-white/40 hover:scale-110 hover:shadow-[0_0_16px_rgba(255,255,255,0.3)]"
                 aria-label="Previous screenshot"
               >
                 <ChevronLeft size={18} />
               </button>
               <button
                 onClick={nextSlide}
-                className="absolute right-4 top-1/2 -translate-y-1/2 rounded-full bg-white/10 p-2 text-white backdrop-blur transition-colors hover:bg-white/20"
+                className="absolute right-4 top-1/2 -translate-y-1/2 rounded-full bg-white/10 p-2 text-white backdrop-blur transition-all hover:bg-white/40 hover:scale-110 hover:shadow-[0_0_16px_rgba(255,255,255,0.3)]"
                 aria-label="Next screenshot"
               >
                 <ChevronRight size={18} />

@@ -1,12 +1,6 @@
 import { Reveal, SectionHeading } from "./Reveal";
 import { MapPin, GraduationCap } from "lucide-react";
 
-const TAGS = [
-  "Zapier", "OpenAI", "Prompt Engineering", "Vibe Coding",
-  "Laravel", "Vue.js", "Google Workspace", "Airtable",
-  "Slack", "Typeform", "Webhooks", "Postman",
-];
-
 const FACTS = [
   { icon: MapPin,         text: "Bohol, Philippines" },
   { icon: GraduationCap, text: "BS Information Technology — Mater Dei College" },
@@ -124,23 +118,6 @@ export function About() {
                   >
                     {l.label} ↗
                   </a>
-                ))}
-              </div>
-
-              {/* Skill tags */}
-              <div className="mt-8 flex flex-wrap gap-2">
-                {TAGS.map((tag) => (
-                  <span
-                    key={tag}
-                    className="rounded-lg px-3 py-1.5 text-xs font-medium transition-all hover:scale-105"
-                    style={{
-                      background: "oklch(1 0 0 / 0.04)",
-                      border: "1px solid oklch(1 0 0 / 0.10)",
-                      color: "var(--muted-foreground)",
-                    }}
-                  >
-                    {tag}
-                  </span>
                 ))}
               </div>
             </div>

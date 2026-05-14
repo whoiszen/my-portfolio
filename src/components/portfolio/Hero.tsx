@@ -165,18 +165,6 @@ export function Hero() {
             >
               View Projects
             </a>
-            <a
-              href="https://ajjosol.my.canva.site/"
-              target="_blank"
-              rel="noreferrer"
-              className="inline-flex items-center gap-2 rounded-full px-7 py-3 text-sm font-medium transition-all hover:opacity-80"
-              style={{
-                border: "1px solid oklch(1 0 0 / 0.12)",
-                color: "var(--muted-foreground)",
-              }}
-            >
-              Resume →
-            </a>
           </div>
 
           {/* Stats */}
